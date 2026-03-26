@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "../styles/theme.css";
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-background text-secondary antialiased;
+  font-family: var(--font-inter);
+  background-image:
+    radial-gradient(600px circle at 20% 10%, rgba(47, 128, 237, 0.15), transparent 40%),
+    radial-gradient(600px circle at 80% 20%, rgba(86, 163, 255, 0.18), transparent 45%),
+    linear-gradient(180deg, #0B1F3A 0%, #09182C 100%);
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-space);
+  color: #E6ECF7;
+}
+
+.section {
+  @apply relative py-16 md:py-24;
+}
+
+.glass {
+  background: rgba(15, 42, 74, 0.6);
+  border: 1px solid rgba(192, 198, 212, 0.18);
+  backdrop-filter: blur(12px);
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-white shadow-glow transition hover:brightness-110;
+}
+
+.btn-outline {
+  @apply inline-flex items-center justify-center gap-2 rounded-full border border-secondary/40 px-6 py-3 text-secondary transition hover:border-secondary/70 hover:text-white;
+}
+
+.grid-glow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(60% 60% at 50% 40%, black 0%, transparent 80%);
+  pointer-events: none;
+  opacity: 0.5;
+}
